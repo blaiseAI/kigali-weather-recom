@@ -34,6 +34,7 @@ export default async function Home() {
     '@type': 'WebPage',
     name: 'Kigali Weather Tracker',
     description: 'Real-time weather updates for Kigali, Rwanda',
+    url: 'https://kigali-weather.vercel.app',
     mainEntity: {
       '@type': 'WeatherForecast',
       about: 'Kigali, Rwanda Weather',
@@ -47,7 +48,13 @@ export default async function Home() {
         value: weather.main.humidity,
         unitCode: 'PERCENT'
       }
-    }
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'Kigali Weather Tracker',
+      url: 'https://kigali-weather.vercel.app'
+    },
+    dateModified: new Date().toISOString()
   };
 
   return (

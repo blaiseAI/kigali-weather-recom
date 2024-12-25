@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kigali-weather.vercel.app/sitemap.xml 
