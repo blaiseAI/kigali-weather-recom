@@ -88,6 +88,17 @@ export default async function Home() {
           <footer className="mt-12 text-center text-sm text-blue-100 dark:text-gray-400">
             <p>Data provided by OpenWeather API</p>
             <p className="mt-2">Updated every 5 minutes for maximum accuracy</p>
+            <p className="mt-4">
+              Created by{' '}
+              <a 
+                href="https://github.com/Tuganeb21" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-medium hover:text-blue-200 dark:hover:text-gray-300 transition-colors"
+              >
+                Tugane Brian
+              </a>
+            </p>
           </footer>
         </div>
       </main>
