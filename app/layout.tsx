@@ -3,7 +3,12 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 
-const inter = Inter({ subsets: ['latin'] });
+// Optimize font loading
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap', // Prevents FOIT (Flash of Invisible Text)
+  preload: true
+});
 
 export const metadata: Metadata = {
   title: 'Kigali Weather Tracker | Real-time Weather Updates',
@@ -62,8 +67,25 @@ export default function RootLayout({
         <link rel="canonical" href="https://kigali-weather.vercel.app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        
+        {/* Preload critical assets */}
+        <link 
+          rel="preload" 
+          href="/og-image.png" 
+          as="image"
+        />
+        
+        {/* Preconnect to external domains */}
+        <link 
+          rel="preconnect" 
+          href="https://api.openweathermap.org"
+        />
+        <link 
+          rel="dns-prefetch" 
+          href="https://api.openweathermap.org"
+        />
       </head>
-      <body>
+      <body className={inter.className}>
         {children}
         <Analytics />
       </body>
