@@ -6,6 +6,13 @@ interface WeatherImpactProps {
   };
 }
 
+interface Activities {
+  outdoor: boolean;
+  sports: boolean;
+  laundry: boolean;
+  messages: string[];
+}
+
 export default function WeatherImpact({ weather }: WeatherImpactProps) {
   const getActivities = () => {
     const temp = weather.main.temp;
@@ -13,7 +20,7 @@ export default function WeatherImpact({ weather }: WeatherImpactProps) {
     const windSpeed = weather.wind.speed;
     const condition = weather.weather[0].main.toLowerCase();
 
-    const activities = {
+    const activities: Activities = {
       outdoor: true,
       sports: true,
       laundry: true,
